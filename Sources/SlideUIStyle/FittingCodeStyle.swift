@@ -9,7 +9,6 @@ extension CodeStyle where Self == FittingCodeStyle {
 }
 
 struct FittingCodeStyle: CodeStyle {
-    @Environment(\.scale) var scale
     fileprivate let idealSize: CGFloat
     fileprivate let weight: Font.Weight
 
@@ -24,7 +23,6 @@ struct FittingCodeStyle: CodeStyle {
             configuration.preview
                 .font(nil)
                 .foregroundColor(nil)
-                .scaleEffect(scale)
             Spacer()
         }
     }
