@@ -1,5 +1,5 @@
 {
-  "originHash" : "e72896a6e6b51b4807a966c2101cdcd1fdab6189228cffb5e2297b8e2fb4825c",
+  "originHash" : "6498ecc7c268697bfdeedfbbbf9ec088d2ad2ae96695368082ec7d7b9e156b16",
   "pins" : [
     {
       "identity" : "slideui",
@@ -7,7 +7,7 @@
       "location" : "https://github.com/danielctull-playground/SlideUI",
       "state" : {
         "branch" : "main",
-        "revision" : "fcaf377f73bbb83e39458a21ffe8ecc3933d1bb7"
+        "revision" : "70022f18321f53b3e95162d82f8e5163fc00d2c7"
       }
     },
     {

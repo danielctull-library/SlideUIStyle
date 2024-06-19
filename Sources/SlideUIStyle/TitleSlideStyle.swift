@@ -7,7 +7,7 @@ extension SlideStyle where Self == TitleSlideStyle {
 
 public struct TitleSlideStyle: SlideStyle {
 
-    @State private var scale: Double = 1
+    @Environment(\.presentationSize.scale) private var scale
 
     public func makeBody(configuration: Configuration) -> some View {
         VStack(spacing: scale) {
@@ -29,6 +29,5 @@ public struct TitleSlideStyle: SlideStyle {
         .padding(8 * scale)
         .foregroundColor(.black)
         .background(.white)
-        .measureScale($scale)
     }
 }

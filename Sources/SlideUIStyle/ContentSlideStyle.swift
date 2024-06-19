@@ -11,7 +11,7 @@ extension SlideStyle where Self == ContentSlideStyle {
 
 public struct ContentSlideStyle: SlideStyle {
 
-    @State private var scale: Double = 1
+    @Environment(\.presentationSize.scale) private var scale
     let alignment: Alignment
 
     public func makeBody(configuration: Configuration) -> some View {
@@ -31,9 +31,8 @@ public struct ContentSlideStyle: SlideStyle {
         .multilineTextAlignment(.leading)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(8 * scale)
-        .codeStyle(.fitting(idealSize: 18 * scale))
+        .codeStyle(.fitting(idealSize: 16 * scale))
         .codeHighlighting(.xcodeClassicLight)
-        .measureScale($scale)
         .foregroundColor(.black)
         .background(.white)
     }
