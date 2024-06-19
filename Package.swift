@@ -12,7 +12,7 @@ let package = Package(
         .library(name: "SlideUIStyle", targets: ["SlideUIStyle"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/danielctull-playground/SlideUI", branch: "main"),
+        .package(url: "https://github.com/danielctull/SlideUI", branch: "main"),
     ],
     targets: [
 
