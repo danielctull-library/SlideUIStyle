@@ -62,6 +62,6 @@ struct TheApp: App {
                 }
             }
         }
-        .slideStyle(.content(alignment: .leading))
+        .slideStyle(.content)
     }
 }

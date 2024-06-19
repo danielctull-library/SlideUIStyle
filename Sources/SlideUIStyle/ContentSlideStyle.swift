@@ -4,7 +4,9 @@ import XcodeCodeHighlighting
 
 extension SlideStyle where Self == ContentSlideStyle {
 
-    public static func content(alignment: Alignment = .leading) -> Self {
+    public static var content: Self { content(alignment: .leading) }
+
+    public static func content(alignment: Alignment) -> Self {
         Self(alignment: alignment)
     }
 }
