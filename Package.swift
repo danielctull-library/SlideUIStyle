@@ -16,19 +16,19 @@ let package = Package(
     ],
     targets: [
 
-        .executableTarget(
-            name: "StyleDemo",
-            dependencies: [
-                .product(name: "SlideUI", package: "SlideUI"),
-                "SlideUIStyle",
-            ]
-        ),
-
         .target(
             name: "SlideUIStyle",
             dependencies: [
                 .product(name: "SlideUI", package: "SlideUI"),
                 .product(name: "XcodeCodeHighlighting", package: "SlideUI"),
+            ]
+        ),
+
+        .executableTarget(
+            name: "SlideUIStyle Demo",
+            dependencies: [
+                .product(name: "SlideUI", package: "SlideUI"),
+                "SlideUIStyle",
             ]
         ),
     ]
