@@ -3,21 +3,31 @@ import SwiftUI
 
 extension CodeStyle where Self == FittingCodeStyle {
 
-    static func fitting(idealSize: CGFloat, weight: Font.Weight = .regular) -> Self {
-        Self(idealSize: idealSize, weight: weight)
+    static func fitting(
+        idealSize: CGFloat,
+        weight: Font.Weight = .regular,
+        design: Font.Design = .monospaced
+    ) -> Self {
+        fitting(idealSize: idealSize) {
+            .system(size: $0, weight: weight, design: design)
+        }
+    }
+
+    static func fitting(idealSize: CGFloat, font: @escaping (CGFloat) -> Font) -> Self {
+        FittingCodeStyle(idealSize: idealSize, font: font)
     }
 }
 
 struct FittingCodeStyle: CodeStyle {
     fileprivate let idealSize: CGFloat
-    fileprivate let weight: Font.Weight
+    fileprivate let font: (CGFloat) -> Font
 
     func makeBody(configuration: Configuration) -> some View {
         HStack(spacing: 0) {
             ViewThatFits(range: 3...max(4, idealSize)) { size in
                 configuration.code
                     .lineSpacing(size / 8)
-                    .font(.system(size: size, weight: weight, design: .monospaced))
+                    .font(font(size))
             }
             Spacer()
             configuration.preview
